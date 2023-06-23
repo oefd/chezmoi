@@ -38,27 +38,25 @@ packer.startup(function(use)
     use { "lukas-reineke/indent-blankline.nvim" }
     use { "nvim-lualine/lualine.nvim",
         requires = { { "nvim-tree/nvim-web-devicons" } },
-        config = require("lualine_cfg"),
-    }
+        config = require("lualine_cfg"), }
 
     -- utility
     use { "editorconfig/editorconfig-vim" }
     use { "tpope/vim-commentary" }
     use { "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/plenary.nvim" } },
-        config = require("telescope_cfg"),
-    }
+        config = require("telescope_cfg"), }
 
     -- syntax
     use { "nvim-treesitter/nvim-treesitter",
         config = require("treesitter_cfg"),
-        run = ":TSUpdate",
-    }
+        run = ":TSUpdate", }
 
     -- lsp
     use { "neovim/nvim-lspconfig",
-        config = require("lspconfig_cfg"),
-    }
+        config = require("lspconfig_cfg"), }
+    use { "j-hui/fidget.nvim",
+        config = function() require("fidget").setup{} end, }
 
     if packer_bootstrapped then packer.sync() end
 end)

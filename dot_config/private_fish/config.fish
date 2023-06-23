@@ -13,8 +13,7 @@ if status is-interactive
     alias ls="ls --color=auto"
     alias pacman="sudo pacman"
     alias podman="sudo podman"
+    alias ip="ip -c=always"
 
-    set -l omni_source "$OMNIDIR/shell_integration/omni.fish"
-    if test -f $omni_source; source $omni_source; end
-    if command -v rbenv >/dev/null; rbenv init - fish | source; end
+    omni hook init fish | source
 end

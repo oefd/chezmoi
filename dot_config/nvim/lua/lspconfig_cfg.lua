@@ -1,6 +1,6 @@
 return function()
     local lspconfig = require("lspconfig")
-    local servers = { "rust_analyzer", "gopls", "pylsp", "clangd" }
+    local servers = { "rust_analyzer", "gopls", "pylsp", "clangd", "zls" }
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     local on_attach = function(client, bufnr)
         local opts = { noremap = true, silent = true }
