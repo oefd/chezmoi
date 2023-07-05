@@ -1,6 +1,6 @@
 return function()
     local lspconfig = require("lspconfig")
-    local servers = { "rust_analyzer", "gopls", "pylsp", "clangd", "zls" }
+    local servers = { "rust_analyzer", "gopls", "pylsp", "clangd", "zls", "denols", }
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     local on_attach = function(client, bufnr)
         local opts = { noremap = true, silent = true }
@@ -11,6 +11,7 @@ return function()
             { "gt", vim.lsp.buf.type_definition },
             { "gr", vim.lsp.buf.references },
             { "<leader>rn", vim.lsp.buf.rename },
+            { "<leader>ca", vim.lsp.buf.code_action },
             { "<leader>fm", function()
                 vim.lsp.buf.format { async = true }
             end },

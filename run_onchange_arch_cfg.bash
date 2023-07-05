@@ -21,6 +21,7 @@ export NODE_REPL_HISTORY="\${XDG_CACHE_HOME}/node_hst"
 export LESSHISTFILE="\${XDG_CACHE_HOME}/lesshist"
 export HISTFILE="\${XDG_CACHE_HOME}/hist"
 export BUNDLE_USER_CACHE="\${XDG_CACHE_HOME}/bundle"
+export DENO_DIR="\${XDG_CACHE_HOME}/deno"
 
 # data
 export CARGO_HOME="\${XDG_DATA_HOME}/cargo"

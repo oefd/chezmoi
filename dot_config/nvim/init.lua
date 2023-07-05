@@ -20,6 +20,8 @@ local keymap_opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "<c-n>", ":bnext<cr>", keymap_opts)
 vim.api.nvim_set_keymap("n", "<c-l>", ":nohl<cr>", keymap_opts)
 vim.api.nvim_set_keymap("n", "<leader>bd", ":b#<bar>bd#<cr>", keymap_opts)
+vim.api.nvim_set_keymap("n", "[d", ":lua vim.diagnostic.goto_next()<cr>", keymap_opts)
+vim.api.nvim_set_keymap("n", "]d", "vim.diagnostic.goto_prev()<cr>", keymap_opts)
 
 ----------------
 -- aesthetics --
@@ -56,6 +58,7 @@ packer.startup(function(use)
     use { "neovim/nvim-lspconfig",
         config = require("lspconfig_cfg"), }
     use { "j-hui/fidget.nvim",
+        tag = "legacy",
         config = function() require("fidget").setup{} end, }
 
     if packer_bootstrapped then packer.sync() end

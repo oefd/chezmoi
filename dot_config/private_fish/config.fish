@@ -7,7 +7,7 @@ set -x EDITOR /usr/bin/nvim
 
 set -x OMNI_GIT "$HOME/repos"
 set -x OMNIDIR "$OMNI_GIT/omni"
-set -x OMNI_ORG "git@github.com:XaF"
+set -x OMNI_ORG "git@github.com:XaF,github.com/XaF"
 
 if status is-interactive
     alias ls="ls --color=auto"
